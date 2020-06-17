@@ -1,0 +1,3 @@
+1   Natural language processing, a branch of artificial intelligence concerned with automated interpretation and generation of human language
+2   Natural-language programming, an ontology-assisted way of programming in terms of natural language sentences
+3   Nonlinear programming, a process of solving optimisation problems where constraints are nonlinear
