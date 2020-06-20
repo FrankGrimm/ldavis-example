@@ -1,3 +1,7 @@
+data/corpora/aclImdb/
+data/corpora/acl*.txt
+data/lda_models/acl*.*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
