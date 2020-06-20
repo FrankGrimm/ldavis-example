@@ -34,7 +34,7 @@ def parse_args():
 
     p.add_argument("--numtopics", type=int, default=50, help="LDA topics")
     p.add_argument("--passes", type=int, default=5, help="LDA passes")
-    p.add_argument("--chunksize", type=int, default=10, help="LDA chunk size")
+    p.add_argument("--chunksize", type=int, default=1000, help="LDA chunk size")
 
     return p.parse_args()
 
@@ -60,7 +60,9 @@ def load_corpus(datasets, dataset_id):
 
     print("[open] %s" % corpus_file)
     with open(corpus_file, "rt") as infile:
-        for line in infile:
+        for lineidx, line in enumerate(infile):
+            if lineidx > 0 and lineidx % 10000 == 0:
+                print("[progress] %s %s" % (corpus_file, lineidx))
             line = line.rstrip()
             delim = '\t'
             if line.strip() == ' ':
